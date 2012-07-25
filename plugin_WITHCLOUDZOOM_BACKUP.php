@@ -17,7 +17,7 @@ add_plugin_hook('uninstall', 'TeachingImageItemTypePlugin::uninstall');
 // this FUNCTIONALITY of this plugin ONLY WORKS
 // if you have the corresponding theme.
 // you can still add the item type without the theme, it just
-// won't display in the crazy different way. hjkhjkh
+// won't display in the crazy different way. 
 function specialItemShowPage($item)
 {
 ?>	
@@ -72,7 +72,23 @@ jQuery(document).ready(function(){
 					</a>	
 				</div>
 				
-
+				<div class="zoomlinker">
+					<a href="#zoom-section" id="zoom-section" title="View using Cloud Zoom"">
+					<img src="<?php echo WEB_PUBLIC_THEME; ?>/aastheme2/images/zoom2.png">
+					</a>	
+				</div>
+<div class="hidering">
+    <div class="zoom-section">
+      <div class="zoom-small-image"><a href='<?php echo $highreslink; ?>' class = 'cloud-zoom' title="Your caption here" rel="softFocus: true, position:'anypos', smoothMove:2">       
+        <img src="<?php echo $regularlink; ?>" alt='' /></a></div>
+        <div class="zoom-desc" style="position:relative">
+      <div id="anypos" style="position:absolute;top:-128px; left: 128px;width:256px; height:256px;"></div>
+        <h3>Soft Focus</h3>
+        <p>Apply a subtle soft-focus effect to the small image.</p>
+        <p>In this example, the zoom window position is specified as a div target which can be positioned anywhere. The movement smoothness is set to a lower value for a snappier feel.</p>
+      </div>
+    </div>
+ </div>
 
 		<script type="text/javascript">
 				jQuery(document).ready(function() {
@@ -87,7 +103,7 @@ jQuery(document).ready(function(){
 			
 				<?php echo display_files_for_item(
 						$options=array(imageSize=>'fullsize'),
-						$wrapperAttributes = array()); 
+						$wrapperAttributes = array('class'=>'cloud-zoom')); 
 				?>
 			</div>
 			
